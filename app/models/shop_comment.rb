@@ -1,0 +1,2 @@
+class ShopComment < ApplicationRecord
+end
