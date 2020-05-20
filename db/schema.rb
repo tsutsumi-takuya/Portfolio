@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2020_05_19_074814) do
   create_table "shops", force: :cascade do |t|
     t.integer "user_id"
     t.string "photo_id"
+    t.string "shop_name"
     t.text "caption"
     t.text "address"
     t.datetime "created_at", null: false
