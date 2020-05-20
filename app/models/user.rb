@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :name, presence: :true, uniqueness: :true
-  validates :introduction, presence: :true, uniqueness: :true
+  # validates :name, presence: :true, uniqueness: :true
+  # validates :introduction, presence: :true, uniqueness: :true
   # nameは空白と重複が不可
   # introductionは空白と重複が不可
 

@@ -3,7 +3,7 @@ class CreateShopComments < ActiveRecord::Migration[5.2]
     create_table :shop_comments do |t|
 
     	t.integer :user_id
-    	t.string :photo_id
+    	t.string :shop_id
     	t.text :comment
 
       	t.timestamps

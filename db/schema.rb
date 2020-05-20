@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2020_05_19_074407) do
 
   create_table "likes", force: :cascade do |t|
     t.integer "user_id"
-    t.string "photo_id"
+    t.string "shop_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2020_05_19_074407) do
 
   create_table "shop_comments", force: :cascade do |t|
     t.integer "user_id"
-    t.string "photo_id"
+    t.string "shop_id"
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -36,10 +36,11 @@ ActiveRecord::Schema.define(version: 2020_05_19_074407) do
 
   create_table "shops", force: :cascade do |t|
     t.integer "user_id"
-    t.string "photo_id"
-    t.string "name"
+    t.string "shop_id"
+    t.string "shop_name"
     t.text "caption"
     t.text "address"
+    t.string "shop_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
