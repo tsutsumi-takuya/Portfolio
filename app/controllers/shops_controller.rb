@@ -4,7 +4,6 @@ class ShopsController < ApplicationController
 
 	def index
 		@shops = Shop.all
-		@shop = Shop.new
 		@user = current_user.id
 	end
 
@@ -19,6 +18,21 @@ class ShopsController < ApplicationController
 
 	def new
 		@shop = Shop.new
+	end
+
+	def create
+		@shop = Shop.new(shop_params)
+		@shop.user_id = current_user.id
+		if
+			@shop.save
+			redirect_to shop_path(@shop.id)
+			# ifの場合、saveされ詳細へpath
+		else
+			@shops = Shop.all
+			@user = current_user.id
+			render action: :index
+			# elseの場合、renderで一覧へ戻る
+		end
 	end
 
 	def edit
@@ -53,6 +67,12 @@ class ShopsController < ApplicationController
 		shop.destroy
 		redirect_to shops_path
 		# shop単体を削除する為、@は付属しない
+	end
+
+	private
+
+	def shop_params
+		params.require(:shop).permit(:shop_name,:caption,:address)
 	end
 
 end
