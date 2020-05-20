@@ -4,6 +4,7 @@ class CreateShops < ActiveRecord::Migration[5.2]
 
     	t.integer :user_id
     	t.string :photo_id
+    	t.string :shop_name
     	t.text :caption
     	t.text :address
 
