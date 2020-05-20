@@ -1,1 +1,11 @@
 <h1>shops new</h1>
+
+<div class="container">
+	<% form_for(@shop) do |f| %>
+		<%= f.text_field :name %>
+		<%= f.text_field :address %>
+		<%= f.text_area :caption %>
+		<%= f.attachment_field :photo %>
+		<%= f.submit "Done" %>
+	<% end %>
+</div>
