@@ -7,9 +7,11 @@
 		<p><%= @shop.address %></p>
 		<p><%= link_to "Edit", edit_shop_path(@shop.id) %></p>
 		<p><%= link_to "Delete", shop_path(@shop.id), method: :delete, "data-confirm" => "本当に消去しますか？" %></p>
+		<p><%= link_to "Shops", shops_path %></p>
 	<% else %>
 		<p><%= @shop.shop_name %></p>
 		<p><%= @shop.caption %></p>
 		<p><%= @shop.address %></p>
+		<p><%= link_to "Shops", shops_path %></p>
 	<% end %>
 </div>

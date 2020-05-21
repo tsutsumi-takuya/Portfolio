@@ -36,6 +36,7 @@ class UsersController < ApplicationController
 
 	def bye
 		@user = User.find(current_user.id)
+		@user.update(is_active: "退会済み")
 		reset_session
 		redirect_to root_path
 	end
@@ -43,7 +44,6 @@ class UsersController < ApplicationController
 	private
 
 	def user_params
-		params.require(:user).permit(:name, :introduction, :profile_image)
+		params.require(:user).permit(:active, :name, :introduction, :profile_image)
 	end
-
 end
