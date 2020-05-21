@@ -2,8 +2,7 @@
 
 <div class="container">
 	<% @shops.each do |shop| %>
-		<p><%= link_to shop.shop_name, shop_path(shop.id) %></p>
+		<p><%= link_to shop.shop_name, shop_path(shop.id) %><%= render "likes/like", shop: shop %></p>
 	<% end %>
-
 	<%= link_to "New SHOP", new_shop_path %>
 </div>

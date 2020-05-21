@@ -1,0 +1,9 @@
+<% if Like.find_by(shop_id: shop.id, user_id: current_user.id) %>
+	<%=link_to shop_likes_path(shop), method: :delete do %>
+		<%= shop.likes.count %>
+	<% end %>
+<% else %>
+	<%= link_to shop_likes_path(shop), method: :post do %>
+		<%= shop.likes.count %>
+	<% end %>
+<% end %>
