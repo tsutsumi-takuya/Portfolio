@@ -4,17 +4,18 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  # validates :name, presence: :true, uniqueness: :true
-  # validates :introduction, presence: :true, uniqueness: :true
-  # nameは空白と重複が不可
-  # introductionは空白と重複が不可
-
 	has_many :shops, dependent: :destroy
 	has_many :likes, dependent: :destroy
 	has_many :shop_comments, dependent: :destroy
 	# userは1対Nの1側(複数のNを所持する)
 	# class userが削除された際は上記も削除される(dependent: :destroy)
 
-  enum active: {登録済み: true, 退会済み: false}
-   #enumで退会済みのユーザーはログイン不可にする
+  enum is_active: {有効: true, 退会済み: false}
+  # 有効会員はtrue、退会済み会員はfalse
+
+  def active_for_authentication?
+    super && (self.is_active == "有効")
+  end
+  # is_activeが有効の場合は有効会員(ログイン可能)
+
 end

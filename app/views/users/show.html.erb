@@ -4,8 +4,8 @@
 	<%= current_user.introduction %>
 
 	<% @shops.each do |shop| %>
-		<p><%= shop.shop_name %></p>
+		<p><%= link_to shop.shop_name, shop_path(shop.id) %></p>
 	<% end %>
 
-	<%= link_to "EditProfile", edit_user_path(current_user.id) %>
-	<%= link_to "Withdrawal", goodbye_user_path %>
+	<p><%= link_to "EditProfile", edit_user_path(current_user.id) %></p>
+	<p><%= link_to "Withdrawal", goodbye_user_path %></p>
