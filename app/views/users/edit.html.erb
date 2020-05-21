@@ -1,1 +1,7 @@
 <h1>users edit</h1>
+
+	<%= form_for @user do |f| %>
+ 		<%= f.text_field :name %>
+ 		<%= f.text_area :introduction %>
+ 		<%= f.submit "Done" %>
+ 	<% end %>

@@ -1,1 +1,11 @@
 <h1>users show</h1>
+
+	<%= current_user.name %>
+	<%= current_user.introduction %>
+
+	<% @shops.each do |shop| %>
+		<p><%= shop.shop_name %></p>
+	<% end %>
+
+	<%= link_to "EditProfile", edit_user_path(current_user.id) %>
+	<%= link_to "Withdrawal", goodbye_user_path %>
