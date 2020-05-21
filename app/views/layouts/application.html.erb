@@ -20,6 +20,7 @@
                     <% if user_signed_in? %>
                         <p><%= link_to "home", root_path %></p>
                         <p><%= link_to "about", home_about_path %></p>
+                        <p><%= link_to "Mypage", user_path(current_user.id) %>
                         <p><%= link_to "logout", destroy_user_session_path, method: :delete %></p>
                     <% else %>
                         <p><%= link_to "home", root_path %></p>

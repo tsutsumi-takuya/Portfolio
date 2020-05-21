@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 	end
 
 	def update
-		@user = User.find_by(:id params[:id])
+		@user = User.find_by(id: params[:id])
 		@user.update(user_params)
 		if
 			@user.save
@@ -28,6 +28,16 @@ class UsersController < ApplicationController
 			render action: :edit
 			# 上記以外の場合、編集画面に戻る
 		end
+	end
+
+	def goodbye
+		@user = User.find(params[:id])
+	end
+
+	def bye
+		@user = User.find(current_user.id)
+		reset_session
+		redirect_to root_path
 	end
 
 	private
