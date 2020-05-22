@@ -1,1 +1,7 @@
 <h1>users index</h1>
+
+<% @users.each do |user| %>
+	<% if user.is_active == "有効" %>
+		<p><%= link_to user.name, user_path(user.id) %></p>
+	<% end %>
+<% end %>

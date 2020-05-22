@@ -6,16 +6,19 @@ Rails.application.routes.draw do
 
 	get "home/about" => "home#about"
 
-	resources :users, only: [:show, :edit, :update] do
-		member do
-			get "goodbye"
-			patch "bye"
-		end
-	end
+	resources :users, only: [:show, :edit, :update]
 
 	resources :shops do
 		resource :likes, only: [:create, :destroy]
 		resources :shop_comments, only: [:create, :destroy]
+	end
+
+	resources :users do
+		member do
+			get "goodbye"
+			patch "bye"
+			get :following, :followers
+		end
 	end
 
 end

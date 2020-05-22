@@ -1,7 +1,7 @@
 <h1>shops show</h1>
 
 <div class="container">
-	<% if @shop.user_id === current_user.id %>
+	<% if @shop.user === current_user %>
 		<p><%= @shop.shop_name %></p>
 		<p><%= @shop.address %></p>
 		<p><%= @shop.caption %></p>
