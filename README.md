@@ -31,6 +31,6 @@
 - Mapでお店の場所がわかる
 - 自分が作成した投稿は編集、消去を行える(自分のみ)
 
-### 『機能一覧(Excel)』
+### 『機能一覧』
 
 <https://docs.google.com/spreadsheets/d/1XQu8emK0OfJdrEPPU2MgpBzk2dSFbKLEvdqQVABqkJ8/edit#gid=0>
