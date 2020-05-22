@@ -2,9 +2,9 @@
 
 <div class="container">
 	<%= form_for(@shop) do |f| %>
-		<%= f.text_field :shop_name %>
-		<%= f.text_field :address %>
-		<%= f.text_area :caption %>
-		<%= f.submit "Done" %>
+		<p>name<%= f.text_field :shop_name %></p>
+		<p>address<%= f.text_field :address %></p>
+		<p>caption<%= f.text_area :caption %></p>
+		<p><%= f.submit "Done" %></p>
 	<% end %>
 </div>

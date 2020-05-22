@@ -2,10 +2,6 @@ class UsersController < ApplicationController
 
 	before_action :authenticate_user!
 
-	def index
-		@user = User.all
-	end
-
 	def show
 		@user = User.find(params[:id])
 		@shops = @user.shops
@@ -24,7 +20,6 @@ class UsersController < ApplicationController
 			redirect_to user_path(@user.id)
 			# @userがsaveされた場合、編集後のuserにpath
 		else
-			@users = User.all
 			render action: :edit
 			# 上記以外の場合、編集画面に戻る
 		end

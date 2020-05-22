@@ -4,8 +4,7 @@ class ShopCommentsController < ApplicationController
 
 	def create
 		shop = Shop.find(params[:shop_id])
-		shop_comment = Shopcomment.new(shop_comment_params)
-		shop_comment.user_id = current_user.id
+		shop_comment = current_user.shop_comments.new(shop_comment_params)
 		shop_comment.shop_id = shop.id
 		shop_comment.save
 		redirect_back(fallback_location: root_path)
@@ -13,11 +12,7 @@ class ShopCommentsController < ApplicationController
 	end
 
 	def destroy
-		shop = Shop.find(params[:shop_id])
-		shop_comment =Comment.find_by(user_id: current_user.id, shop_id: params[:shop_id])
-		shop_comment.user_id = current_user.id
-		shop_comment.shop_id = shop.id
-		shop_comment.destory
+		ShopComment.find_by(id: params[:id], shop_id: params[:shop_id]).destroy
 		redirect_back(fallback_location: root_path)
 		# 他の画面に遷移しない
 	end
