@@ -52,7 +52,7 @@ class ShopsController < ApplicationController
 		@shop.update(shop_params)
 		if
 			@shop.save
-			redirect_to shops_path(@shop.id)
+			redirect_to shop_path(@shop.id)
 			# @shopがsaveされた場合、編集後のshopにpath
 		else
 			@user = current_user
