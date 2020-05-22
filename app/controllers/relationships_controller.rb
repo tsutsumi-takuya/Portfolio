@@ -5,5 +5,5 @@ class RelationshipsController < ApplicationController
 
 	def unfollow
 	end
-	
+
 end
