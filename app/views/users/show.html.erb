@@ -1,11 +1,16 @@
 <h1>users show</h1>
 
-	<%= current_user.name %>
-	<%= current_user.introduction %>
+<div class="container">
+
+	<p><%= @user.name %></p>
+	<p><%= @user.introduction %></p>
+
+	<% if @user === current_user %>
+		<p><%= link_to "EditProfile", edit_user_path(current_user.id) %></p>
+		<p><%= link_to "Withdrawal", goodbye_user_path %></p>
+	<% end %>
 
 	<% @shops.each do |shop| %>
 		<p><%= link_to shop.shop_name, shop_path(shop.id) %></p>
 	<% end %>
-
-	<p><%= link_to "EditProfile", edit_user_path(current_user.id) %></p>
-	<p><%= link_to "Withdrawal", goodbye_user_path %></p>
+</div>
