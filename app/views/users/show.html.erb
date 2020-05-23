@@ -2,6 +2,12 @@
 
 <div class="container">
 
+	<%= render 'follow_form' %>
+
+	<section class="stats">
+  		<%= render 'users/status' %>
+	</section>
+
 	<p><%= @user.name %></p>
 	<p><%= @user.introduction %></p>
 
@@ -13,4 +19,5 @@
 	<% @shops.each do |shop| %>
 		<p><%= link_to shop.shop_name, shop_path(shop.id) %></p>
 	<% end %>
+
 </div>
