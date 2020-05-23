@@ -13,8 +13,8 @@
 		<%= link_to "Withdrawal", goodbye_user_path %>
 	<% end %>
 
-	<p><%= "Follow: #{@user.follower.count}" %></p>
-	<p><%= "Follower: #{@user.followed.count}" %></p>
+	<p>Follow <%=link_to @user.follower.count, following_user_path(@user) %></p>
+	<p>Follower <%=link_to @user.followed.count, followers_user_path(@user) %></p>
 
 	<% unless @user == current_user %>
 		<% if current_user.following?(@user) %>
@@ -23,33 +23,3 @@
 	    	<%= link_to "Follow", follow_path(@user.id), method: :get %>
 	  	<% end %>
 	<% end %>
-
-	<h4>Follow All</h4>
-		<% @user.following_user.each do |user| %>
-	  	<p>
-	  		<%= link_to user.name, user_path(user) %>
-		    <% unless user == current_user %>
-		    	<% if current_user.following?(user) %>
-		        	<%= link_to "Unfollow", unfollow_path(user.id), method: :get %>
-		      	<% else %>
-		        	<%= link_to "Follow", follow_path(user.id), method: :get %>
-		      	<% end %>
-		    <% end %>
-		</p>
-	<% end %>
-
-	<h4>Follower All</h4>
-	<% @user.follower_user.each do |user| %>
-		<p>
-	    	<%= user.name %>
-	    	<% unless user == current_user %>
-	      		<% if current_user.following?(user) %>
-	        		<%= link_to "Unfollow", unfollow_path(user.id), method: :get %>
-	      		<% else %>
-	        		<%= link_to "Follow", follow_path(user.id), method: :get %>
-	      		<% end %>
-	      		<%= link_to "Show", user_path(user) %>
-	    	<% end %>
-	  	</p>
-	<% end %>
-</div>

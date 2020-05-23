@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 		member do
 			get "goodbye"
 			patch "bye"
+			get :following, :followers
 		end
 	end
 
