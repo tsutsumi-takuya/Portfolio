@@ -1,0 +1,17 @@
+<h1>Follower All</h1>
+
+<div class="container" align="center">
+	<% @user.follower_user.each do |user| %>
+		<p>
+			<%= user.name %>
+			<% unless user == current_user %>
+				<% if current_user.following?(user) %>
+					<%= link_to "Unfollow", unfollow_path(user.id), method: :get %>
+				<% else %>
+					<%= link_to "Follow", follow_path(user.id), method: :get %>
+				<% end %>
+				<%= link_to "Show", user_path(user) %>
+			<% end %>
+		</p>
+	<% end %>
+</div>

@@ -12,6 +12,20 @@ class UsersController < ApplicationController
 		# @userに紐付く@shops
 	end
 
+	# フォローしているユーザ
+	def following
+		@user  = User.find(params[:id])
+		@users = @user.follower
+		render "follow"
+	end
+
+	  # フォローされているユーザ
+	def followers
+		@user  = User.find(params[:id])
+		@users = @user.followed
+		render 'follower'
+	end
+
 	def edit
 		@user = User.find(params[:id])
 	end
