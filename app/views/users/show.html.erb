@@ -1,17 +1,16 @@
 <h1>users show</h1>
 
-<div class="container">
-
+<div class="container" align="center">
 	<p><%= @user.name %></p>
 	<p><%= @user.introduction %></p>
 
-	<% if @user === current_user %>
-		<p><%= link_to "EditProfile", edit_user_path(current_user.id) %></p>
-		<p><%= link_to "Withdrawal", goodbye_user_path %></p>
-	<% end %>
-
 	<% @shops.each do |shop| %>
 		<p><%= link_to shop.shop_name, shop_path(shop.id) %></p>
+	<% end %>
+
+	<% if @user === current_user %>
+		<%= link_to "EditProfile", edit_user_path(current_user.id) %>
+		<%= link_to "Withdrawal", goodbye_user_path %>
 	<% end %>
 
 	<p><%= "Follow: #{@user.follower.count}" %></p>
@@ -25,22 +24,21 @@
 	  	<% end %>
 	<% end %>
 
-	<h4>All Follow</h4>
+	<h4>Follow All</h4>
 		<% @user.following_user.each do |user| %>
 	  	<p>
-	  		<%= user.name %>
+	  		<%= link_to user.name, user_path(user) %>
 		    <% unless user == current_user %>
 		    	<% if current_user.following?(user) %>
 		        	<%= link_to "Unfollow", unfollow_path(user.id), method: :get %>
 		      	<% else %>
 		        	<%= link_to "Follow", follow_path(user.id), method: :get %>
 		      	<% end %>
-		    	<%= link_to "Show", user_path(user) %>
 		    <% end %>
 		</p>
 	<% end %>
 
-	<h4>All Follower</h4>
+	<h4>Follower All</h4>
 	<% @user.follower_user.each do |user| %>
 		<p>
 	    	<%= user.name %>

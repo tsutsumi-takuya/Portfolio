@@ -1,19 +1,21 @@
 <h1>users index</h1>
 
-<% if user_signed_in? %>
-	<% @users.each do |user| %>
-		<% if user.is_active == "有効" %>
-			<p>
-				<%= user.name %>
-				<% unless user == current_user %>
-					<% if current_user.following?(user) %>
-						<%= link_to 'Unfollow', unfollow_path(user.id) %>
-					<% else %>
-						<%= link_to 'Follow', follow_path(user.id) %>
+<div class="container" align="center">
+	<% if user_signed_in? %>
+		<% @users.each do |user| %>
+			<% if user.is_active == "有効" %>
+				<p>
+					<%= user.name %>
+					<% unless user == current_user %>
+						<% if current_user.following?(user) %>
+							<%= link_to 'Unfollow', unfollow_path(user.id) %>
+						<% else %>
+							<%= link_to 'Follow', follow_path(user.id) %>
+						<% end %>
+						<%= link_to "Show", user_path(user) %>
 					<% end %>
-					<%= link_to "Show", user_path(user) %>
-				<% end %>
-			</p>
+				</p>
+			<% end %>
 		<% end %>
 	<% end %>
-<% end %>
+</div>

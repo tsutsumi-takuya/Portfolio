@@ -1,6 +1,6 @@
 <h1>shops show</h1>
 
-<div class="container">
+<div class="container" align="center">
 	<% if @shop.user === current_user %>
 		<p><%= @shop.shop_name %></p>
 		<p><%= @shop.address %></p>
@@ -16,8 +16,8 @@
 	<% end %>
 
 	<%= form_for [@shop, @shop_comment] do |f| %>
-		<%= f.text_area :comment %>
-		<%= f.submit "Done" %>
+		<p><%= f.text_area :comment %></p>
+		<p><%= f.submit "Done" %></p>
 	<% end %>
 
 	<% @shop_comments.each do |shop_comment| %>
