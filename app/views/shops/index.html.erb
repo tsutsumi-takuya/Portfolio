@@ -2,6 +2,7 @@
 
 <div class="container" align="center">
 	<% @shops.each do |shop| %>
+		<p><%= attachment_image_tag shop, :shop_image, size:"200x200" %></p>
 		<p><%= link_to shop.shop_name, shop_path(shop.id) %><%= render "likes/like", shop: shop %></p>
 	<% end %>
 	<%= link_to "New SHOP", new_shop_path %>

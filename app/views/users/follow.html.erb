@@ -3,7 +3,10 @@
 <div class="container" align="center">
 	<% @user.following_user.each do |user| %>
 		<p>
-			<%= link_to user.name, user_path(user) %>
+			<%= link_to user_path(user) do %>
+				<%= attachment_image_tag user, :profile_image, size:"50x50" %>
+				<%= user.name %>
+			<% end %>
 			<% unless user == current_user %>
 				<% if current_user.following?(user) %>
 					<%= link_to "Unfollow", unfollow_path(user.id), method: :get %>
