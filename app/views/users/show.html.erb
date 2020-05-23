@@ -6,6 +6,7 @@
 	<p><%= attachment_image_tag @user, :profile_image, size:"125x125" %></p>
 
 	<% @shops.each do |shop| %>
+		<p><%= attachment_image_tag shop, :shop_image, size:"200x200" %></p>
 		<p><%= link_to shop.shop_name, shop_path(shop.id) %></p>
 	<% end %>
 
