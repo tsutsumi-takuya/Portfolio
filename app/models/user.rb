@@ -39,4 +39,6 @@ class User < ApplicationRecord
     following_user.include?(user)
   end
 
+  attachment :profile_image, destroy: false
+
 end

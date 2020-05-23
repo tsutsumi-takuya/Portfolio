@@ -3,6 +3,7 @@
 <div class="container" align="center">
 	<p><%= @user.name %></p>
 	<p><%= @user.introduction %></p>
+	<p><%= attachment_image_tag @user, :profile_image, size:"125x125" %></p>
 
 	<% @shops.each do |shop| %>
 		<p><%= link_to shop.shop_name, shop_path(shop.id) %></p>

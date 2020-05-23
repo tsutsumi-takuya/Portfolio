@@ -7,4 +7,6 @@ class Shop < ApplicationRecord
 	# shopは1対Nの1側(複数のNを所持する)
 	# class shopが削除された際は上記も削除される(dependent: :destroy)
 
+	attachment :shop_image, destroy: false
+
 end
