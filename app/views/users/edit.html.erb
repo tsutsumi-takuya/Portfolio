@@ -1,7 +1,10 @@
 <h1>users edit</h1>
 
+<div class="container" align="center">
 	<%= form_for @user do |f| %>
- 		<%= f.text_field :name %>
- 		<%= f.text_area :introduction %>
- 		<%= f.submit "Done" %>
+ 		<p><%= f.text_field :name %></p>
+ 		<p><%= f.text_area :introduction %></p>
+ 		<p><%= f.attachment_field :profile_image %></p>
+ 		<p><%= f.submit "Done" %></p>
  	<% end %>
+ </div>
