@@ -3,5 +3,6 @@
 <% @users.each do |user| %>
 	<% if user.is_active == "有効" %>
 		<p><%= link_to user.name, user_path(user.id) %></p>
-	<% end %>
+		<p><%= render 'users/follow_form', user: user %></p>
+		<% end %>
 <% end %>

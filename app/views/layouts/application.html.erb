@@ -21,6 +21,7 @@
                         <p><%= link_to "Top", root_path %></p>
                         <p><%= link_to "About", home_about_path %></p>
                         <p><%= link_to "Shops", shops_path %>
+                        <p><%= link_to "Users", users_path %>
                         <p><%= link_to "Mypage", user_path(current_user.id) %>
                         <p><%= link_to "logout", destroy_user_session_path, method: :delete %></p>
                     <% else %>
@@ -28,7 +29,7 @@
                         <p><%= link_to "About", home_about_path %></p>
                         <p><%= link_to "Signup", new_user_registration_path %></p>
                         <p><%= link_to "Login", new_user_session_path %></p>
-                    <% end %>        
+                    <% end %>
                 </nav>
             </div>
         </header>
