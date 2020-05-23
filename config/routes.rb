@@ -6,6 +6,15 @@ Rails.application.routes.draw do
 
 	get "home/about" => "home#about"
 
+	root "users#index"
+
+	get 'follow/:id' => 'relationships#follow', as: "follow"
+  	get 'unfollow/:id' => 'relationships#unfollow', as: "unfollow"
+
+  	resources :users, only: [:show, :edit, :update]
+
+  	resources :relationships, only: [:follow, :unfollow]
+
 	resources :shops do
 		resource :likes, only: [:create, :destroy]
 		resources :shop_comments, only: [:create, :destroy]
@@ -16,14 +25,6 @@ Rails.application.routes.draw do
 			get "goodbye"
 			patch "bye"
 		end
-
-		member do
-			get :following, :followers
-		end
-	resources :users, only: [:show, :edit, :update]
-
-	resources :relationships, only: [:create, :destroy]
-
 	end
 
 end

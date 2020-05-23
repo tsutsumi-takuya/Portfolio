@@ -2,12 +2,6 @@
 
 <div class="container">
 
-	<%= render 'follow_form' %>
-
-	<section class="stats">
-  		<%= render 'users/status' %>
-	</section>
-
 	<p><%= @user.name %></p>
 	<p><%= @user.introduction %></p>
 
@@ -20,4 +14,44 @@
 		<p><%= link_to shop.shop_name, shop_path(shop.id) %></p>
 	<% end %>
 
+	<p><%= "Follow: #{@user.follower.count}" %></p>
+	<p><%= "Follower: #{@user.followed.count}" %></p>
+
+	<% unless @user == current_user %>
+		<% if current_user.following?(@user) %>
+	    	<%= link_to "Unfollow", unfollow_path(@user.id), method: :get %>
+	  	<% else %>
+	    	<%= link_to "Follow", follow_path(@user.id), method: :get %>
+	  	<% end %>
+	<% end %>
+
+	<h4>All Follow</h4>
+		<% @user.following_user.each do |user| %>
+	  	<p>
+	  		<%= user.name %>
+		    <% unless user == current_user %>
+		    	<% if current_user.following?(user) %>
+		        	<%= link_to "Unfollow", unfollow_path(user.id), method: :get %>
+		      	<% else %>
+		        	<%= link_to "Follow", follow_path(user.id), method: :get %>
+		      	<% end %>
+		    	<%= link_to "Show", user_path(user) %>
+		    <% end %>
+		</p>
+	<% end %>
+
+	<h4>All Follower</h4>
+	<% @user.follower_user.each do |user| %>
+		<p>
+	    	<%= user.name %>
+	    	<% unless user == current_user %>
+	      		<% if current_user.following?(user) %>
+	        		<%= link_to "Unfollow", unfollow_path(user.id), method: :get %>
+	      		<% else %>
+	        		<%= link_to "Follow", follow_path(user.id), method: :get %>
+	      		<% end %>
+	      		<%= link_to "Show", user_path(user) %>
+	    	<% end %>
+	  	</p>
+	<% end %>
 </div>
