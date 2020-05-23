@@ -5,7 +5,7 @@
 		<% @users.each do |user| %>
 			<% if user.is_active == "有効" %>
 				<p>
-					<%= user.name %>
+					<%= link_to user.name, user_path(user) %>
 					<% unless user == current_user %>
 						<% if current_user.following?(user) %>
 							<%= link_to 'Unfollow', unfollow_path(user.id) %>
