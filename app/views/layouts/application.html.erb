@@ -11,19 +11,19 @@
 
     <body>
         <header>
-            <div class="container">
+            <div class="container" align="center">
                 <nav class="nav navbar-nav navbar-center">
                     <h3>Gather Coffeestand</h3>
                 </nav>
 
                 <nav>
                     <% if user_signed_in? %>
-                        <p><%= link_to "Top", root_path %></p>
-                        <p><%= link_to "About", home_about_path %></p>
-                        <p><%= link_to "Shops", shops_path %>
-                        <p><%= link_to "Users", users_path %>
-                        <p><%= link_to "Mypage", user_path(current_user.id) %>
-                        <p><%= link_to "logout", destroy_user_session_path, method: :delete %></p>
+                        <%= link_to "Top", root_path %>
+                        <%= link_to "About", home_about_path %>
+                        <%= link_to "Shops", shops_path %>
+                        <%= link_to "Users", users_path %>
+                        <%= link_to "Mypage", user_path(current_user.id) %>
+                        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
                     <% else %>
                         <p><%= link_to "Top", root_path %></p>
                         <p><%= link_to "About", home_about_path %></p>
@@ -35,5 +35,9 @@
         </header>
 
     <%= yield %>
+
+    <footer align="center">
+        <h4>- All Rights Researved by Gather Coffeestand.inc -</h4>
+    </footer>
   </body>
 </html>
