@@ -13,10 +13,10 @@
         <header>
             <div class="container" align="center">
                 <nav class="nav navbar-nav navbar-center">
-                    <h3>Gather Coffeestand</h3>
+                    <h3><%=link_to "Gather Coffeestand", root_path %></h3>
                 </nav>
 
-                <nav>
+                <nav class="head_nav">
                     <% if user_signed_in? %>
                         <%= link_to "Top", root_path %>
                         <%= link_to "About", home_about_path %>
