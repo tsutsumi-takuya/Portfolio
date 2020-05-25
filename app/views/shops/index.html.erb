@@ -1,9 +1,20 @@
 <h1>shops index</h1>
 
+<div class="erorr">
+	<% if @shop.errors.any? %>
+		<h3>There are <%= @shop.errors.count %> errors</h3>
+			<ul>
+				<% @shop.errors.full_messages.each do |message| %>
+					<li><%= message %></li>
+				<% end %>
+			</ul>
+	<% end %>
+</div>
+
 <div class="container" align="center">
+	<%= link_to "New SHOP", new_shop_path %>
 	<% @shops.each do |shop| %>
 		<p><%= attachment_image_tag shop, :shop_image, size:"200x200" %></p>
 		<p><%= link_to shop.shop_name, shop_path(shop.id) %><%= render "likes/like", shop: shop %></p>
 	<% end %>
-	<%= link_to "New SHOP", new_shop_path %>
 </div>

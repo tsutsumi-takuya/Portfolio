@@ -1,11 +1,11 @@
-<h1>shops new</h1>
+<h1>shop new</h1>
 
 <div class="container" align="center">
 	<%= form_for(@shop) do |f| %>
-		<p>name<%= f.text_field :shop_name %></p>
-		<p>address<%= f.text_field :address %></p>
-		<p>caption<%= f.text_area :caption %></p>
-		<p>photo<%= f.attachment_field :shop_image %></p>
+		name<p><%= f.text_field :shop_name %></p>
+		address<p><%= f.text_field :address %></p>
+		caption<p><%= f.text_area :caption %></p>
+		photo<p><%= f.attachment_field :shop_image %></p>
 		<p><%= f.submit "Done" %></p>
 	<% end %>
 </div>

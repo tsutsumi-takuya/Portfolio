@@ -10,14 +10,19 @@ class User < ApplicationRecord
 	# userは1対Nの1側(複数のNを所持する)
 	# class userが削除された際は上記も削除される(dependent: :destroy)
 
-  has_many :follower, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy # フォロー取得
-  has_many :followed, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy # フォロワー取得
-
-  has_many :following_user, through: :follower, source: :followed # 自分がフォローしている人
-  has_many :follower_user, through: :followed, source: :follower # 自分をフォローしている人
+  has_many :follower, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
+  has_many :followed, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
+  has_many :following_user, through: :follower, source: :followed
+  has_many :follower_user, through: :followed, source: :follower
+  # フォローを取得する
+  # フォロワーを取得する
+  # 自分がフォローしている人を取得する
+  # 自分をフォローしている人を取得する
 
   enum is_active: {有効: true, 退会済み: false}
   # 有効会員はtrue、退会済み会員はfalse
+
+  attachment :profile_image, destroy: false
 
   def active_for_authentication?
     super && (self.is_active == "有効")
@@ -38,7 +43,5 @@ class User < ApplicationRecord
   def following?(user)
     following_user.include?(user)
   end
-
-  attachment :profile_image, destroy: false
 
 end

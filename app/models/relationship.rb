@@ -4,4 +4,7 @@ class Relationship < ApplicationRecord
 	belongs_to :followed, class_name: "User"
 	# Userモデルに対してfollower_idでbelongs_toの関連付け
 
+	validates :follower_id, presence: true
+	validates :followed_id, presence: true
+
 end

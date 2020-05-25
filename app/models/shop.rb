@@ -9,4 +9,8 @@ class Shop < ApplicationRecord
 
 	attachment :shop_image, destroy: false
 
+	validates :shop_name, presence: true
+	validates :address, presence: true
+	validates :caption, presence: true
+
 end
