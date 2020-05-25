@@ -1,4 +1,4 @@
-<h1>shops show</h1>
+<h1>shop show</h1>
 
 <div class="container" align="center">
 	<% if @shop.user === current_user %>
@@ -24,6 +24,7 @@
 
 	<% @shop_comments.each do |shop_comment| %>
 		<% if shop_comment.user === current_user %>
+			<%= link_to @user.name, user_path(@user.id) %>
 			<%= shop_comment.comment %>
 			<%= link_to "Destroy", shop_shop_comment_path(shop_comment.shop, shop_comment), method: :delete, "data-confirm" => "本当に消去しますか？" %>
 		<% else %>
