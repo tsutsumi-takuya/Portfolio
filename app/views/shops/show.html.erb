@@ -23,12 +23,10 @@
 	<% end %>
 
 	<% @shop_comments.each do |shop_comment| %>
+		<%= link_to shop_comment.user.name, user_path(shop_comment.user.id) %>
+		<%= shop_comment.comment %>
 		<% if shop_comment.user === current_user %>
-			<%= link_to @user.name, user_path(@user.id) %>
-			<%= shop_comment.comment %>
 			<%= link_to "Destroy", shop_shop_comment_path(shop_comment.shop, shop_comment), method: :delete, "data-confirm" => "本当に消去しますか？" %>
-		<% else %>
-			<%= shop_comment.comment %>
 		<% end %>
 		</br>
 	<% end %>
