@@ -9,10 +9,17 @@
 	<% end %>
 </div>
 
-<div class="container" align="center">
+<div class="new" align="center">
 	<%= link_to "New SHOP", new_shop_path %>
-	<% @shops.each do |shop| %>
-		<p><%= attachment_image_tag shop, :shop_image, size:"200x200" %></p>
-		<p><%= link_to shop.shop_name, shop_path(shop.id) %><%= render "likes/like", shop: shop %></p>
-	<% end %>
+</div>
+
+<div class="container" align="center">
+	<div class="row justify-content-around">
+			<% @shops.each do |shop| %>
+				<%= link_to shop_path(shop.id) do %>
+					<%= attachment_image_tag shop, :shop_image, size:"300x300" %>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
 </div>

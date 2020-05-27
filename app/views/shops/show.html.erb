@@ -1,15 +1,15 @@
 <div class="container" align="center">
 	<% if @shop.user === current_user %>
-		<p><%= attachment_image_tag @shop, :shop_image, size:"200x200" %></p>
-		<p><%= @shop.shop_name %></p>
+		<p><%= attachment_image_tag @shop, :shop_image, size:"280x280" %></p>
+		<p><%= @shop.shop_name %><%= render "likes/like", shop: @shop %></p>
 		<p><%= @shop.address %></p>
 		<p><%= @shop.caption %></p>
 		<%= link_to "Edit", edit_shop_path(@shop.id) %>
 		<%= link_to "Delete", shop_path(@shop.id), method: :delete, "data-confirm" => "本当に消去しますか？" %>
 		<%= link_to "Shops", shops_path %>
 	<% else %>
-		<p><%= attachment_image_tag @shop, :shop_image, size:"200x200" %></p>
-		<p><%= @shop.shop_name %></p>
+		<p><%= attachment_image_tag @shop, :shop_image, size:"280x280" %></p>
+		<p><%= @shop.shop_name %><%= render "likes/like", shop: @shop %></p>
 		<p><%= @shop.address %></p>
 		<p><%= @shop.caption %></p>
 		<%= link_to "Shops", shops_path %>
