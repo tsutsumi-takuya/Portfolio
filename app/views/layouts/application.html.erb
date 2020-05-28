@@ -7,6 +7,7 @@
 
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     </head>
 
     <body>
@@ -14,7 +15,14 @@
             <div class="container">
                 <nav class="navbar-center">
                     <h3><%=link_to "Gather Coffeestand", root_path %></h3>
+                    <%= link_to "New SHOP", new_shop_path %>
                 </nav>
+                <nav class="nav" align="center">
+                <%= form_tag(shops_path, :method => "get") do %>
+                    <%= text_field_tag :search, params[:search] %>
+                    <%= submit_tag "🔍", :shop_name => nil %>
+                <% end %>
+            </nav>
 
                 <nav>
                     <span class="nav" align="center">
