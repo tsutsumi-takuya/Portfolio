@@ -9,11 +9,8 @@
 	<% end %>
 </div>
 
-<div class="new" align="center">
-	<%= link_to "New SHOP", new_shop_path %>
-</div>
-
 <div class="container" align="center">
+	<%= link_to "New SHOP", new_shop_path %>
 	<div class="row justify-content-around">
 			<% @shops.each do |shop| %>
 				<%= link_to shop_path(shop.id) do %>
