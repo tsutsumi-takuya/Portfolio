@@ -13,4 +13,12 @@ class Shop < ApplicationRecord
 	validates :address, presence: true
 	validates :caption, presence: true
 
+	def self.search(search)
+		if
+			search
+			Shop.where(['shop_name LIKE ?', "%#{search}%"])
+		else
+			Shop.all
+		end
+	end
 end

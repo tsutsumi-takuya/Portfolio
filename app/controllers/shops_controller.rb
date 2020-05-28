@@ -6,6 +6,7 @@ class ShopsController < ApplicationController
 		@shops = Shop.all
 		@shop = Shop.new
 		@user = current_user.id
+		@search_shops = Shop.all.search(params[:search])
 	end
 
 	def show
