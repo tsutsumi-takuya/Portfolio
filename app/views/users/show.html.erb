@@ -1,6 +1,6 @@
 <div class="container" align="center">
 	<div class="icon">
-		<%= attachment_image_tag @user, :profile_image, size:"150x150", :class => "icon" %>
+		<%= attachment_image_tag @user, :profile_image, size:"150x150", fallback: "no_image.jpg", :class => "icon" %>
 	</div>
 
 	<table>
@@ -26,7 +26,7 @@
 	<table>
 		<% @shops.each do |shop| %>
 			<tr>
-				<th><%= attachment_image_tag shop, :shop_image, size:"300x300" %></th>
+				<th><%= attachment_image_tag shop, :shop_image, size:"300x300", fallback: "no_image.jpg" %></th>
 			</tr>
 
 			<tr>
