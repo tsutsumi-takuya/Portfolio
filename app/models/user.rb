@@ -24,6 +24,10 @@ class User < ApplicationRecord
 
   attachment :profile_image, destroy: false
 
+  def liked_by?(shop_id)
+    likes.where(shop_id: shop_id).exists?
+  end
+
   def active_for_authentication?
     super && (self.is_active == "有効")
   end
