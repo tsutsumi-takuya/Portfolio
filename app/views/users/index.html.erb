@@ -6,20 +6,16 @@
 					<tr>
 						<td>
 							<%= link_to user_path(user) do %>
-							<%= attachment_image_tag user, :profile_image, size:"100x100", fallback: "no_image.jpg" %>
-							<%= user.name %>
-						<% end %>
-						</td>
-
-						<td>
-						<% unless user == current_user %>
-							<% if current_user.following?(user) %>
-								<%= link_to 'Unfollow', unfollow_path(user.id) %>
-							<% else %>
-								<%= link_to 'Follow', follow_path(user.id) %>
+								<%= attachment_image_tag user, :profile_image, size:"100x100", fallback: "no_image.jpg" %>
+								<%= user.name %>
 							<% end %>
 						</td>
-						<% end %>
+
+						<td class="followbutton_<%= user.id %>">
+							<% unless user == current_user %>
+								<%= render "followbutton", user: user %>
+							<% end %>
+						</td>
 					</tr>
 				<% end %>
 			<% end %>

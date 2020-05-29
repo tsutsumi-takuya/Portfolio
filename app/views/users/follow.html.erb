@@ -9,13 +9,9 @@
 					<% end %>
 				</td>
 
-				<td>
+				<td class="followbutton_<%= user.id %>">
 					<% unless user == current_user %>
-						<% if current_user.following?(user) %>
-							<%= link_to "Unfollow", unfollow_path(user.id), method: :get %>
-						<% else %>
-							<%= link_to "Follow", follow_path(user.id), method: :get %>
-						<% end %>
+						<%= render "followbutton", user: user %>
 					<% end %>
 				</td>
 			</tr>
