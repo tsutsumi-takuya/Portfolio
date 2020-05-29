@@ -18,6 +18,12 @@
 	<p><%= @user.name %></p>
 	<p><%= @user.introduction %></p>
 
+	<div class="followbutton_<%= @user.id %>">
+		<% unless @user == current_user %>
+			<%= render "followbutton", user: @user %>
+		<% end %>
+	</div>
+
 	<% if @user === current_user %>
 		<p><%= link_to "EditProfile", edit_user_path(current_user.id) %></p>
 		<p><%= link_to "Withdrawal", goodbye_user_path %></p>
@@ -32,14 +38,6 @@
 			<tr>
 				<td><%= link_to shop.shop_name, shop_path(shop.id) %></td>
 			</tr>
-		<% end %>
-
-		<% unless @user == current_user %>
-			<% if current_user.following?(@user) %>
-			    <%= link_to "Unfollow", unfollow_path(@user.id), method: :get %>
-			<% else %>
-			    <%= link_to "Follow", follow_path(@user.id), method: :get %>
-			<% end %>
 		<% end %>
 	</table>
 </div>

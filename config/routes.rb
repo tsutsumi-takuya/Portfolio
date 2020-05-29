@@ -11,8 +11,8 @@ Rails.application.routes.draw do
 	post "like/:id" => "likes#like", as: "like"
   	delete "like/:id" => "likes#unlike", as: "unlike"
 
-	get "follow/:id" => "relationships#follow", as: "follow"
-  	get "unfollow/:id" => "relationships#unfollow", as: "unfollow"
+	post "follow/:id" => "relationships#follow", as: "follow"
+  	post "unfollow/:id" => "relationships#unfollow", as: "unfollow"
 
   	resources :users, only: [:show, :edit, :update]
 
