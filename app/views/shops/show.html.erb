@@ -1,19 +1,29 @@
 <div class="container" align="center">
-	<%= link_to @shop.user.name, user_path(@shop.user.id) %>
+	<table>
+		<tr>
+			<td>
+				<div class="icon-mini">
+					<%= attachment_image_tag @shop.user, :profile_image, size:"50x50", fallback: "no_image.jpg", :class => "icon-mini" %>
+				</div>
+			</td>
+			<td>
+				<%= link_to @shop.user.name, user_path(@shop.user.id) %>
+			</td>
+		</tr>
+	</table>
+	</br>
 	<% if @shop.user === current_user %>
 		<p><%= attachment_image_tag @shop, :shop_image, size:"280x280" %></p>
-		<p><%= @shop.shop_name %><%= render "likes/like", shop: @shop %></p>
+		<p><%= @shop.shop_name %><%= render "likes/like", shop: @shop %><%= @shop.shop_comments.count %></p>
 		<p><%= @shop.address %></p>
 		<p><%= @shop.caption %></p>
 		<%= link_to "Edit", edit_shop_path(@shop.id) %>
 		<%= link_to "Delete", shop_path(@shop.id), method: :delete, "data-confirm" => "本当に消去しますか？" %>
-		<%= link_to "Shops", shops_path %>
 	<% else %>
 		<p><%= attachment_image_tag @shop, :shop_image, size:"280x280" %></p>
-		<p><%= @shop.shop_name %><%= render "likes/like", shop: @shop %></p>
+		<p><%= @shop.shop_name %><%= render "likes/like", shop: @shop %><%= @shop.shop_comments.count %></p>
 		<p><%= @shop.address %></p>
 		<p><%= @shop.caption %></p>
-		<%= link_to "Shops", shops_path %>
 	<% end %>
 
 	<%= render "shop_comments/shop_comment", shop: @shop %>
