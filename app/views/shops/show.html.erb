@@ -14,14 +14,18 @@
 	</br>
 	<% if @shop.user === current_user %>
 		<p><%= attachment_image_tag @shop, :shop_image, size:"280x280" %></p>
-		<p><%= @shop.shop_name %><%= render "likes/like", shop: @shop %><%= @shop.shop_comments.count %></p>
+		<p><%= @shop.shop_name %></p>
+		<p><%= render "likes/like", shop: @shop %></p>
+		<p><i class="far fa-comment-alt"></i> <%= @shop.shop_comments.count %></p>
 		<p><%= @shop.address %></p>
 		<p><%= @shop.caption %></p>
 		<%= link_to "Edit", edit_shop_path(@shop.id) %>
 		<%= link_to "Delete", shop_path(@shop.id), method: :delete, "data-confirm" => "本当に消去しますか？" %>
 	<% else %>
 		<p><%= attachment_image_tag @shop, :shop_image, size:"280x280" %></p>
-		<p><%= @shop.shop_name %><%= render "likes/like", shop: @shop %><%= @shop.shop_comments.count %></p>
+		<p><%= @shop.shop_name %></p>
+		<p><%= render "likes/like", shop: @shop %></p>
+		<p><i class="far fa-comment-alt"></i> <%= @shop.shop_comments.count %></p>
 		<p><%= @shop.address %></p>
 		<p><%= @shop.caption %></p>
 	<% end %>
