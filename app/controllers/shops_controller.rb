@@ -32,7 +32,7 @@ class ShopsController < ApplicationController
 		else
 			@shops = Shop.all
 			@user = current_user.id
-			render action: :index
+			render action: :new
 			# elseの場合、renderで一覧へ戻る
 		end
 	end
