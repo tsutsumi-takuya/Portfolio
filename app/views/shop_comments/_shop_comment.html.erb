@@ -1,13 +1,17 @@
+<% @shop_comments.each do |shop_comment| %>
+<table>
+	<tr>
+		<td><%= link_to shop_comment.user.name, user_path(shop_comment.user.id) %></td>
+		<td><%= shop_comment.comment %></td>
+	<% if shop_comment.user === current_user %>
+		<td><%= link_to "Destroy", shop_shop_comment_path(shop_comment.shop, shop_comment), method: :delete, "data-confirm" => "本当に消去しますか？" %></td>
+	<% end %>
+</tr>
+</table>
+<% end %>
+
 <%= form_for [@shop, @shop_comment] do |f| %>
 	<p><%= f.text_area :comment %></p>
 	<p><%= f.submit "Done" %></p>
 <% end %>
 
-<% @shop_comments.each do |shop_comment| %>
-	<%= link_to shop_comment.user.name, user_path(shop_comment.user.id) %>
-	<%= shop_comment.comment %>
-	<% if shop_comment.user === current_user %>
-	<%= link_to "Destroy", shop_shop_comment_path(shop_comment.shop, shop_comment), method: :delete, "data-confirm" => "本当に消去しますか？" %>
-	<% end %>
-	</br>
-<% end %>
