@@ -67,7 +67,7 @@ class ShopsController < ApplicationController
 	def destroy
 		shop = Shop.find(params[:id])
 		shop.destroy
-		redirect_to shops_path
+		redirect_to user_path(current_user.id)
 		# shop単体を削除する為、@は付属しない
 	end
 
