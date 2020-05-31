@@ -3,7 +3,7 @@
 		name<p><%= f.text_field :shop_name %></p>
 		address<p><%= f.text_field :address %></p>
 		caption<p><%= f.text_area :caption %></p>
-		photo<p><%= f.attachment_field :shop_image %></p>
+		photo<p><%= f.attachment_field :shop_image, size:"280x280", fallback: "no_image.jpg" %></p>
 		<p><%= f.submit "Done" %></p>
 	<% end %>
 </div>
