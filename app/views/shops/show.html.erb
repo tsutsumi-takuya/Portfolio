@@ -13,7 +13,7 @@
 	</table>
 	</br>
 	<% if @shop.user === current_user %>
-		<p><%= attachment_image_tag @shop, :shop_image, size:"280x280" %></p>
+		<p><%= attachment_image_tag @shop, :shop_image, size:"280x280", fallback: "no_image.jpg" %></p>
 		<p><%= @shop.shop_name %></p>
 		<table>
 			<tr>
@@ -26,7 +26,7 @@
 		<%= link_to "Edit", edit_shop_path(@shop.id) %>
 		<%= link_to "Delete", shop_path(@shop.id), method: :delete, "data-confirm" => "本当に消去しますか？" %>
 	<% else %>
-		<p><%= attachment_image_tag @shop, :shop_image, size:"280x280" %></p>
+		<p><%= attachment_image_tag @shop, :shop_image, size:"280x280", fallback: "no_image.jpg" %></p>
 		<p><%= @shop.shop_name %></p>
 		<table>
 			<tr>

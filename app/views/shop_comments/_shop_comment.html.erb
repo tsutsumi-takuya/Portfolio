@@ -11,7 +11,7 @@
 <% end %>
 
 <%= form_for [@shop, @shop_comment] do |f| %>
-	<p><%= f.text_area :comment %></p>
-	<p><%= f.submit "Done" %></p>
+	<%= f.text_area :comment %>
+	<%= f.submit "Done" %>
 <% end %>
 
