@@ -12,9 +12,9 @@
 }
 
 body {
-  margin: 0;
-  background: black;
-  background-size: cover;
+	background-image: image-url("test4.jpg");
+    background-attachment: fixed;
+  	background-size: cover;
 }
 
 header {
@@ -42,14 +42,4 @@ h3 {
   font-size: 2rem;
   width: 100%;
   letter-spacing: .5rem;
-}
-
-h4 {
-  font-family: Century Schoolbook, Century Schoolbook L, Georgia, serif;
-  font-size: 8vmin;
-  text-align: center;
-  margin: 2rem 3rem 0;
-  mix-blend-mode: overlay;
-  color: #fff;
-  font-weight: 100;
 }
