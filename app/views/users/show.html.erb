@@ -13,7 +13,7 @@
 		<tr align="center">
 			<td><%=link_to @user.follower.count, following_user_path(@user) %></td>
 			<td><%=link_to @user.followed.count, followers_user_path(@user) %></td>
-			<td><%= @shops.count %></td>
+			<td><%=link_to @shops.count %></td>
 		</tr>
 	</table>
 

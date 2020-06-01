@@ -32,21 +32,16 @@
 header {
 	a {
 		text-decoration: none;
-		color: #FFFFFF;
 	}
 }
 
-ul {
-  list-style: none;
-}
-
-.navbar {
+body {
 	background-color:black;
 }
 
 a {
 	text-decoration: none;
-	color: #808080;
+	color: #fff;
 }
 
 @media screen and (max-width: 768px) {
