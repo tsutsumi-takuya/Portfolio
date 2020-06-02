@@ -29,14 +29,46 @@
 	clear: both;
 }
 
-header {
-	a {
-		text-decoration: none;
-	}
+@font-face {
+  font-family: Moderne Sans;
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/moderne_sans.woff2)
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
-	background-color:black;
+  background-image: image-url("cafe1.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  color: white;
+  transition: .4s;
+}
+
+header:hover {
+  background: rgba(255,255,255,0.8);
+  color: #000;
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+  padding: 1rem;
+}
+
+h3 {
+  font-family: Moderne Sans, sans-serif;
+  text-align: center;
+  font-size: 2rem;
+  width: 100%;
+  letter-spacing: .5rem;
 }
 
 a {

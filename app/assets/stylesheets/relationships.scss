@@ -1,3 +1,52 @@
 // Place all the styles related to the Relationships controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+ul {
+  list-style: none;
+}
+
+.top {
+	font-family: 'Exo', sans-serif;
+	color: #fff;
+}
+
+.field {
+	padding: 20px;
+}
+
+.field-2 {
+	padding: 40px;
+}
+
+.grad{
+    top: -20px;
+    left: -20px;
+    right: -40px;
+    bottom: -40px;
+    z-index: 1;
+    opacity: 0.7;
+}
+
+.login{
+    top: calc(50% - 75px);
+    left: calc(50% - 50px);
+    height: 150px;
+    width: 350px;
+    padding: 10px;
+    z-index: 2;
+    color: #fff;
+}
+
+.login input {
+    width: 250px;
+    height: 30px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 2px;
+    color: #fff;
+    font-family: 'Exo', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 4px;
+}
