@@ -8,6 +8,8 @@ class CreateShops < ActiveRecord::Migration[5.2]
     	t.text :caption
     	t.text :address
       t.string :shop_image_id
+      t.float :latitude
+      t.float :longitude
 
       	t.timestamps
     end
