@@ -3,27 +3,28 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .icon {
-	width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
 }
 
 .user_index{
-  width:400px
-  }
-
-  table th{
-  padding : 5px 5px;
+  width: 400px
+  th{
+  		padding: 15px;
+	}
+	td{
+		padding: 15px;
+	}
 }
 
-table td{
-  padding : 5px 5px;
-}
-
-body {
-  background-image: image-url("cafe2.jpg");
-    background-attachment: fixed;
-    background-size: cover;
+.all-table{
+	th{
+  		padding: 10px;
+	}
+	td{
+		padding: 10px;
+	}
 }

@@ -3,7 +3,7 @@
 		<%= attachment_image_tag @user, :profile_image, size:"150x150", fallback: "no_image.jpg", :class => "icon" %>
 	</div>
 
-	<table>
+	<table class="all-table">
 		<tr>
 			<th> Follow </th>
 			<th> Follower </th>
@@ -31,7 +31,7 @@
 		<p><%= link_to "Withdrawal", goodbye_user_path %></p>
 	<% end %>
 
-	<table>
+	<table class="all-table">
 		<% @shops.each do |shop| %>
 			<tr>
 				<th><%= attachment_image_tag shop, :shop_image, size:"300x300", fallback: "no_image.jpg" %></th>
