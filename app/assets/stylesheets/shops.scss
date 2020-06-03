@@ -9,3 +9,44 @@
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
 }
+
+.photo {
+	opacity: 0.7;
+	font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+	margin-top: 180px;
+}
+
+.done {
+	margin-top: 65px;
+}
+
+.button {
+    display       : inline-block;
+    font-size     : 10pt;
+    text-align    : center;
+    cursor        : pointer;
+    padding       : 15px 15px;
+    background    : #999999;
+    color         : #ffffff;
+    line-height   : 1em;
+    transition    : .3s;
+    box-shadow    : 6px 6px 3px #666666;
+    border        : 2px solid #999999;
+}
+.button:hover {
+    box-shadow    : none;
+    color         : #999999;
+    background    : #ffffff;
+}
+
+.c-table {
+    th{
+        padding: 5px;
+    }
+    td{
+        padding: 5px;
+    }
+  margin: 5px;
+}

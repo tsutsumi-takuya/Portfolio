@@ -1,5 +1,5 @@
 <div class="container" align="center">
-	<table>
+	<table class="all-table">
 		<tr>
 			<td>
 				<div class="icon-mini">
@@ -14,8 +14,8 @@
 	</br>
 	<% if @shop.user === current_user %>
 		<p><%= attachment_image_tag @shop, :shop_image, size:"280x280", fallback: "no_image.jpg" %></p>
-		<p><%= @shop.shop_name %></p>
-		<table>
+		<h3><%= @shop.shop_name %></h3>
+		<table class="all-table">
 			<tr>
 				<td><%= render "likes/like", shop: @shop %></td>
 				<td><i class="far fa-comment-alt"></i> <%= @shop.shop_comments.count %></td>
@@ -27,8 +27,8 @@
 		<%= link_to "Delete", shop_path(@shop.id), method: :delete, "data-confirm" => "本当に消去しますか？" %>
 	<% else %>
 		<p><%= attachment_image_tag @shop, :shop_image, size:"280x280", fallback: "no_image.jpg" %></p>
-		<p><%= @shop.shop_name %></p>
-		<table>
+		<h3><%= @shop.shop_name %></h3>
+		<table class="all-table">
 			<tr>
 				<td><%= render "likes/like", shop: @shop %></td>
 				<td><i class="far fa-comment-alt"></i> <%= @shop.shop_comments.count %></td>
