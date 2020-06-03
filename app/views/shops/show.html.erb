@@ -21,7 +21,45 @@
 				<td><i class="far fa-comment-alt"></i> <%= @shop.shop_comments.count %></td>
 			</tr>
 		</table>
-		<p><%= @shop.address %></p>
+		<script type="text/javascript">
+		    function initMap() {
+
+		        var test ={lat: <%= @latitude %>, lng: <%= @longitude %>};
+		        var map = new google.maps.Map(document.getElementById('map'), {
+		            zoom: 15,
+		            center: test
+		        });
+		        var transitLayer = new google.maps.TransitLayer();
+		        transitLayer.setMap(map);
+
+		        var contentString = '住所：<%= :address %>';
+		        var infowindow = new google.maps.InfoWindow({
+		            content: contentString
+		        });
+
+		        var marker = new google.maps.Marker({
+		            position:test,
+		            map: map,
+		            title: contentString
+		        });
+
+		        marker.addListener('click', function() {
+		            infowindow.open(map, marker);
+		        });
+		    }
+		</script>
+		<script async defersrc="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyA_EKYkZqEkdP91lWz6xANhKO-B7vUbPaQ&callback=initMap"></script>
+
+
+			<style type="text/css">
+			  #map { height: 400px;
+			    margin-left:auto;
+			    margin-right:auto;
+			    text-align:left;
+			    width: 80%;}
+			</style>
+			<div id="map"></div>
+
 		<p><%= @shop.caption %></p>
 		<%= link_to "Edit", edit_shop_path(@shop.id) %>
 		<%= link_to "Delete", shop_path(@shop.id), method: :delete, "data-confirm" => "本当に消去しますか？" %>
