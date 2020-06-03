@@ -1,9 +1,33 @@
 <div class="container" align="center">
+	<div class="top">
+		<h1>Edit SHOP</h1>
+	</div>
+
 	<%= form_for(@shop) do |f| %>
-		<p><%= f.text_field :shop_name %></p>
-		<p><%= f.text_field :address %></p>
-		<p><%= f.text_area :caption %></p>
-		<p><%= f.attachment_field :shop_image %></p>
-		<p><%= f.submit "Done" %></p>
+		<div class="grad">
+	    		<div class="login">
+				    <div class="field">
+				    	<%= f.label "Shop Name" %>
+				        <%= f.text_field :shop_name %>
+				    </div>
+				    <div class="field">
+				        <%= f.label "Address" %>
+				        <%= f.text_field :address %>
+				    </div>
+				    <div class="field">
+				        <%= f.label "Caption" %>
+				        <%= f.text_field :caption %>
+				    </div>
+	  			</div>
+	  		</div>
+
+			<div class="photo">
+	  		<%= f.label "Photo" %>
+			<%= f.attachment_field :shop_image, size:"280x280", fallback: "no_image.jpg" %>
+			</div>
+
+			<div class="done">
+	      		<%= f.submit "Done", :class => "button" %>
+	  		</div>
 	<% end %>
 </div>
