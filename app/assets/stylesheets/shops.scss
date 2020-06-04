@@ -2,31 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.clearfix::after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
 .icon-mini {
 	width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
+  height: 50px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
 }
 
 .photo {
 	opacity: 0.7;
 	font-size: 16px;
-    font-weight: 400;
-    color: #fff;
+  font-weight: 400;
+  color: #fff;
 	margin-top: 180px;
 }
 
@@ -35,17 +23,17 @@
 }
 
 .button {
-    display       : inline-block;
-    font-size     : 10pt;
-    text-align    : center;
-    cursor        : pointer;
-    padding       : 15px 15px;
-    background    : #999999;
-    color         : #ffffff;
-    line-height   : 1em;
-    transition    : .3s;
-    box-shadow    : 6px 6px 3px #666666;
-    border        : 2px solid #999999;
+    display: inline-block;
+    font-size: 10pt;
+    text-align: center;
+    cursor: pointer;
+    padding: 15px 15px;
+    background: #999999;
+    color: #ffffff;
+    line-height: 1em;
+    transition: .3s;
+    box-shadow: 6px 6px 3px #666666;
+    border: 2px solid #999999;
 }
 .button:hover {
     box-shadow    : none;
@@ -70,3 +58,35 @@
   text-align:left;
   width: 80%
 }
+
+.img_wrap {
+
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #000;
+
+}
+
+.img_wrap img {
+  width: 100%;
+  cursor: pointer;
+  transition-duration: 0.3s;
+
+}
+
+.img_wrap:hover img {
+  opacity: 0.6;
+  transition-duration: 0.3s;
+
+}
+
+.img_wrap .caption {
+  font-size:    130%;
+  text-align:     center;
+  padding-top:    80px;
+  color:      #fff;
+
+}
+
