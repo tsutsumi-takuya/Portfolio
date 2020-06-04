@@ -9,6 +9,9 @@ class Shop < ApplicationRecord
 
 	attachment :shop_image, destroy: false
 
+	geocoded_by :address
+  	after_validation :geocode, :if => :address_changed?
+
 	validates :shop_name, presence: true
 	validates :address, presence: true
 	validates :caption, presence: true

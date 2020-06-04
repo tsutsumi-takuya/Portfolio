@@ -39,7 +39,8 @@
 }
 
 body {
-  background-image: image-url("cafe1.jpg");
+  background-image: image-url(".jpg");
+  background: black;
   background-attachment: fixed;
   background-size: cover;
 }
