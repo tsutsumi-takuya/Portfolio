@@ -21,12 +21,12 @@
                 <nav>
                     <a class="nav" align="center">
                         <% if user_signed_in? %>
-                            <%= link_to "Top", root_path %>
-                            <%= link_to "About", home_about_path %>
-                            <%= link_to "Shops", shops_path %>
-                            <%= link_to "Users", users_path %>
-                            <%= link_to "New shops", new_shop_path %>
-                            <%= link_to "Mypage", user_path(current_user.id) %>
+                            <%= link_to "Top", root_path %>/
+                            <%= link_to "About", home_about_path %>/
+                            <%= link_to "Shops", shops_path %>/
+                            <%= link_to "Users", users_path %>/
+                            <%= link_to "New shops", new_shop_path %>/
+                            <%= link_to "Mypage", user_path(current_user.id) %>/
                             <%= link_to "Logout", destroy_user_session_path, method: :delete %>
                             <div class="search" align="right">
                                 <%= form_tag(shops_path, :method => "get") do %>
@@ -35,9 +35,9 @@
                                 <% end %>
                             </div>
                         <% else %>
-                            <%= link_to "Top", root_path %>
-                            <%= link_to "About", home_about_path %>
-                            <%= link_to "Signup", new_user_registration_path %>
+                            <%= link_to "Top", root_path %>/
+                            <%= link_to "About", home_about_path %>/
+                            <%= link_to "Signup", new_user_registration_path %>/
                             <%= link_to "Login", new_user_session_path %>
                             <div class="search" align="right">
                                 <%= form_tag(shops_path, :method => "get") do %>
@@ -52,6 +52,14 @@
         </header>
 
     <%= yield %>
+
+    <footer>
+    　　<ul class="footer-menu">
+            <li><%= link_to "Top", root_path %> /</li>
+            <li><%= link_to "About", home_about_path %></li>
+        </ul>
+        <p>© All rights reserved by Gather Coffeestand</p>
+    </footer>
 
   </body>
 </html>
