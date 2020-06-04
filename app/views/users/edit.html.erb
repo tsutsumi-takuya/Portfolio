@@ -1,8 +1,29 @@
 <div class="container" align="center">
+	<div class="top">
+		<h1>Edit Profile</h1>
+	</div>
+
 	<%= form_for @user do |f| %>
- 		<p><%= f.text_field :name %></p>
- 		<p><%= f.text_area :introduction %></p>
- 		<p><%= f.attachment_field :profile_image %></p>
- 		<p><%= f.submit "Done" %></p>
- 	<% end %>
- </div>
+		<div class="grad">
+	    	<div class="login">
+	    		<div class="field">
+				    <%= f.label "Name" %>
+				    <%= f.text_field :name %>
+				</div>
+				<div class="field">
+				    <%= f.label "Introduction" %>
+				    <%= f.text_field :introduction %>
+				</div>
+	  		</div>
+	  	</div>
+
+			<div class="profile-image">
+	  		<%= f.label "Profile Image" %>
+			<%= f.attachment_field :profile_image, fallback: "no_image.jpg" %>
+			</div>
+
+			<div class="done">
+	      		<%= f.submit "Done", :class => "button" %>
+	  		</div>
+	<% end %>
+</div>
