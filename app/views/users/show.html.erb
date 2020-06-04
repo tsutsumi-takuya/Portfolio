@@ -17,8 +17,15 @@
 		</tr>
 	</table>
 
-	<p><%= @user.name %></p>
-	<p><%= @user.introduction %></p>
+	<% if @user === current_user %>
+		<table class="all-table"></tbr>
+			<th><%= link_to "EditProfile", edit_user_path(current_user.id) %></th>
+			<th><%= link_to "Withdrawal", goodbye_user_path %></th>
+		</table>
+	<% end %>
+
+	<p>◯ <%= @user.name %></p>
+	<p>◯ <%= @user.introduction %></p>
 
 	<div class="followbutton_<%= @user.id %>">
 		<% unless @user == current_user %>
@@ -26,20 +33,14 @@
 		<% end %>
 	</div>
 
-	<% if @user === current_user %>
-		<p><%= link_to "EditProfile", edit_user_path(current_user.id) %></p>
-		<p><%= link_to "Withdrawal", goodbye_user_path %></p>
-	<% end %>
-
-	<table class="all-table">
 		<% @shops.each do |shop| %>
-			<tr>
-				<th><%= attachment_image_tag shop, :shop_image, size:"300x300", fallback: "no_image.jpg" %></th>
-			</tr>
-
-			<tr>
-				<td><%= link_to shop.shop_name, shop_path(shop.id) %></td>
-			</tr>
+			<div class="col-md-4">
+				<div class="set">
+					<%= link_to shop_path(shop.id) do %>
+						<%= attachment_image_tag shop, :shop_image, size:"300x300", fallback: "no_image.jpg" %></br>
+						<%= link_to shop.shop_name, shop_path(shop.id) %>
+					<% end %>
+				</div>
+			</div>
 		<% end %>
-	</table>
 </div>
