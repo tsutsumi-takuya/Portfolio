@@ -14,7 +14,7 @@
     <body>
         <header class="navbar" align="center">
             <div class="container">
-                <nav class="navbar-left">
+                <nav class="navbar-center">
                     <h3><%=link_to "GATHER COFFEESTAND", root_path %></h3>
                 </nav>
 
@@ -25,26 +25,25 @@
                             <%= link_to "About", home_about_path %>/
                             <%= link_to "Shops", shops_path %>/
                             <%= link_to "Users", users_path %>/
-                            <%= link_to "New shops", new_shop_path %>/
                             <%= link_to "Mypage", user_path(current_user.id) %>/
                             <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-                            <div class="search" align="right">
+                            <!-- <div class="search" align="right">
                                 <%= form_tag(shops_path, :method => "get") do %>
                                     <%= text_field_tag :search, params[:search] %>
-                                    <%= submit_tag "Shop Search", :shop_name => nil %>
+                                    <%= submit_tag "Shop Search", :shop_name => nil, placeholder: "ユーザー名"%>
                                 <% end %>
-                            </div>
+                            </div> -->
                         <% else %>
                             <%= link_to "Top", root_path %>/
                             <%= link_to "About", home_about_path %>/
                             <%= link_to "Signup", new_user_registration_path %>/
                             <%= link_to "Login", new_user_session_path %>
-                            <div class="search" align="right">
+                            <!-- <div class="search" align="right">
                                 <%= form_tag(shops_path, :method => "get") do %>
                                     <%= text_field_tag :search, params[:search] %>
-                                    <%= submit_tag "Shop Search", :shop_name => nil %>
+                                    <%= submit_tag "Shop Search", :shop_name => nil, placeholder: "ユーザー名"%>
                                 <% end %>
-                            </div>
+                            </div> -->
                         <% end %>
                     </a>
                 </nav>
