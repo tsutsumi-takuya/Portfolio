@@ -17,6 +17,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
 @font-face {
   font-family: "Noto Serif JP", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HGS明朝E", "ＭＳ Ｐ明朝", serif;
   src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/moderne_sans.woff2)
@@ -24,6 +25,11 @@
 
 * {
   box-sizing: border-box;
+}
+
+ .photo-view {
+  height: 600px;
+  width: 70%;
 }
 
 body {
