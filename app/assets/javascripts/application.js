@@ -16,3 +16,12 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require_tree .
+
+$(document).on("ready turbolinks:load", function() {
+    $('.top-photo').slick({
+        fade: true,
+        autoplay: true,
+        infinite: true,
+        autoplaySpeed: 3500,
+    });
+});
