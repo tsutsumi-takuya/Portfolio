@@ -20,9 +20,9 @@
 				<td><%= render "likes/like", shop: @shop %></td>
 				<td><i class="far fa-comment-alt"></i> <%= @shop.shop_comments.count %></td>
 			</tr>
-		</table>
+		</table></br>
 		<p>Address : <%= @shop.address %></p>
-		<p><%= @shop.caption %></p>
+		<p><%= @shop.caption %></p></br>
 		<%= link_to "Edit", edit_shop_path(@shop.id) %>
 		<%= link_to "Delete", shop_path(@shop.id), method: :delete, "data-confirm" => "本当に消去しますか？" %>
 	<% else %>
@@ -38,7 +38,7 @@
 		<p><%= @shop.caption %></p>
 	<% end %>
 
-	<p><%= render "shop_comments/shop_comment", shop: @shop %></p>
+	<p><%= render "shop_comments/shop_comment", shop: @shop %></p></br>
 
 	<div id="map"></div>
 
@@ -71,6 +71,6 @@
 	</script>
 
 	<script async defer
-	    src="https://maps.googleapis.com/maps/api/js?v=quarterly&key=[My API KEY]&callback=initMap">
+	    src="https://maps.googleapis.com/maps/api/js?v=quarterly&key=[API]&callback=initMap">
 	</script>
 </div>

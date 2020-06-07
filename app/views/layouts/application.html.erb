@@ -8,11 +8,11 @@
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
         <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     </head>
 
     <body>
-        <header class="navbar" align="center">
+        <header class="navbar navbar-expand-lg" align="center">
             <div class="container">
                 <nav class="navbar-center">
                     <h3><%=link_to "GATHER COFFEESTAND", root_path %></h3>
@@ -30,7 +30,7 @@
                             <!-- <div class="search" align="right">
                                 <%= form_tag(shops_path, :method => "get") do %>
                                     <%= text_field_tag :search, params[:search] %>
-                                    <%= submit_tag "Shop Search", :shop_name => nil, placeholder: "ユーザー名"%>
+                                    <%= submit_tag "Shop Search", :shop_name => nil %>
                                 <% end %>
                             </div> -->
                         <% else %>
@@ -41,7 +41,7 @@
                             <!-- <div class="search" align="right">
                                 <%= form_tag(shops_path, :method => "get") do %>
                                     <%= text_field_tag :search, params[:search] %>
-                                    <%= submit_tag "Shop Search", :shop_name => nil, placeholder: "ユーザー名"%>
+                                    <%= submit_tag "Shop Search", :shop_name => nil %>
                                 <% end %>
                             </div> -->
                         <% end %>
