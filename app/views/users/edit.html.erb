@@ -17,13 +17,13 @@
 	  		</div>
 	  	</div>
 
-			<div class="profile-image">
+		<div class="profile-image">
 	  		<%= f.label "Profile Image" %>
 			<%= f.attachment_field :profile_image, fallback: "no_image.jpg" %>
-			</div>
+		</div>
 
-			<div class="done">
-	      		<%= f.submit "Done", :class => "button" %>
-	  		</div>
+		<div class="done">
+	      	<%= f.submit "Done", :class => "button" %>
+	  	</div>
 	<% end %>
 </div>

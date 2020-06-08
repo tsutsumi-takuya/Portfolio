@@ -3,62 +3,62 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  font-family: "Noto Serif JP", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HGS明朝E", "ＭＳ Ｐ明朝", serif;
-  color: #999999;
-  background-image: image-url("cafe.jpg");
-  background-attachment: fixed;
-  background-size: cover;
+    font-family: "Noto Serif JP", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HGS明朝E", "ＭＳ Ｐ明朝", serif;
+    color: #999999;
+    background-image: image-url("cafe.jpg");
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 .icon {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
 }
 
-.user_index{
-  width: 400px
-  th{
-  		padding: 15px;
-	}
-	td{
-		padding: 15px;
-	}
+.user_index {
+    width: 400px
+        th{
+        		padding: 15px;
+      	}
+      	td{
+      		padding: 15px;
+      	}
 }
 
-.all-table{
+.all-table {
     color: #999999;
-	th{
-  		padding: 8px;
-	}
-	td{
-		padding: 8px;
-	}
+      	th{
+        		padding: 8px;
+      	}
+      	td{
+      		padding: 8px;
+      	}
 }
 
 p {
-	color: #999999;
+	 color: #999999;
 }
 
-.profile-image{
-  opacity: 0.7;
-	font-size: 16px;
-  font-weight: 400;
-  color: #999999;
-	margin-top: 80px;
+.profile-image {
+    opacity: 0.7;
+  	font-size: 16px;
+    font-weight: 400;
+    color: #999999;
+  	margin-top: 80px;
 }
 
 .set {
-	margin-top: 15px;
+	 margin-top: 15px;
 }
 
 .bye {
-  margin-top: 250px;
-  margin-bottom: 125px;
+    margin-top: 250px;
+    margin-bottom: 125px;
 }
 
 .bye-link {
-  margin-bottom: 125px;
+    margin-bottom: 125px;
 }

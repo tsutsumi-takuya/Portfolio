@@ -43,3 +43,5 @@ $(document).on("ready turbolinks:load", function() {
   ]
     });
 });
+
+// slickの詳細設定とレスポンシブ設定

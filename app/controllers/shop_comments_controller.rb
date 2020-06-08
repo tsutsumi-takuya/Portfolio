@@ -14,6 +14,7 @@ class ShopCommentsController < ApplicationController
 	def destroy
 		ShopComment.find_by(id: params[:id], shop_id: params[:shop_id]).destroy
 		redirect_back(fallback_location: root_path)
+		# shopcommentを見つけdestroy
 		# 他の画面に遷移しない
 	end
 
