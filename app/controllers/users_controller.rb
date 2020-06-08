@@ -47,7 +47,7 @@ class UsersController < ApplicationController
 
 	def bye
 		@user = User.find(current_user.id)
-		@user.update(is_active: "退会済み")
+		@user.update(is_active: "Invalid")
 		reset_session
 		redirect_to root_path
 	end

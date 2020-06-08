@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  font-family: "Noto Serif JP", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HGS明朝E", "ＭＳ Ｐ明朝", serif;
+  color: #999999;
+  background-image: image-url("cafe.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 .icon {
   width: 130px;
   height: 130px;

@@ -19,7 +19,7 @@ class User < ApplicationRecord
   # 自分がフォローしている人を取得する
   # 自分をフォローしている人を取得する
 
-  enum is_active: {有効: true, 退会済み: false}
+  enum is_active: {Available: true, Invalid: false}
   # 有効会員はtrue、退会済み会員はfalse
 
   attachment :profile_image, destroy: false
@@ -29,7 +29,7 @@ class User < ApplicationRecord
   end
 
   def active_for_authentication?
-    super && (self.is_active == "有効")
+    super && (self.is_active == "Available")
   end
   # is_activeが有効の場合は有効会員(ログイン可能)
 
