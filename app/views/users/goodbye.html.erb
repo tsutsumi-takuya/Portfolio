@@ -1,5 +1,9 @@
 <div class="container" align="center">
-	<h2>Do you want withdrawal ??</h2>
-	<p><%= link_to "Return Mypage", user_path(current_user.id) %></p>
-	<p><%= link_to "Withdrawal", bye_user_path(@user.id), method: :patch %></p>
+	<div class="bye">
+		<h2>Do you want withdrawal ??</h2>
+	</div>
+	<div class="bye-link">
+		<p><%= link_to "Return Mypage", user_path(current_user.id) %></p>
+		<p><%= link_to "Withdrawal", bye_user_path(@user.id), method: :patch %></p>
+	</div>
 </div>
