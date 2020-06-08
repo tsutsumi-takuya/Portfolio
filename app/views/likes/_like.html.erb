@@ -1,0 +1,9 @@
+<% if current_user.liked_by?(shop.id) %>
+	<%= link_to unlike_path(shop), method: :delete, remote: true  do %>
+		<i class="fas fa-heart"> <%= shop.likes.count %></i>
+	<% end %>
+<% else %>
+	<%= link_to like_path(shop), method: :post, remote: true do %>
+		<i class="far fa-heart"> <%= shop.likes.count %></i>
+	<% end %>
+<% end %>

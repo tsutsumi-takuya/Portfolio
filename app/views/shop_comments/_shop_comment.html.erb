@@ -1,0 +1,21 @@
+<div class="comment">
+	<% @shop_comments.each do |shop_comment| %>
+		<table class="c-table">
+			<tr>
+				<td><%= attachment_image_tag shop_comment.user, :profile_image, size:"50x50", fallback: "no_image.jpg", :class => "icon-mini" %></td>
+				<td><%= link_to shop_comment.user.name, user_path(shop_comment.user.id) %></td>
+				<td><%= shop_comment.comment %></td>
+			<% if shop_comment.user === current_user %>
+				<td><%= link_to "Destroy", shop_shop_comment_path(shop_comment.shop, shop_comment), method: :delete, "data-confirm" => "本当に消去しますか？" %></td>
+			<% end %>
+			</tr>
+		</table>
+	<% end %>
+
+	<div class="comment-box">
+		<%= form_for [@shop, @shop_comment] do |f| %>
+			<%= f.text_area :comment, size:"45x5", :placeholder => "Please comment." %>
+			<p><%= f.submit "Done", :class => "button-2" %></p>
+		<% end %>
+	</div>
+</div>

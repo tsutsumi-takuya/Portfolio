@@ -1,0 +1,30 @@
+// Place all the styles related to the Shop_comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.button-2 {
+    display       : inline-block;
+    font-size     : 10pt;
+    text-align    : center;
+    cursor        : pointer;
+    padding       : 5px 5px;
+    background    : #999999;
+    color         : #ffffff;
+    line-height   : 1em;
+    transition    : .3s;
+    box-shadow    : 6px 6px 3px #666666;
+    border        : 2px solid #999999;
+}
+.button-2:hover {
+    box-shadow    : none;
+    color         : #999999;
+    background    : #ffffff;
+}
+
+.comment {
+    margin-top: 30px;
+}
+
+.comment-box {
+    margin-top: 30px;
+}

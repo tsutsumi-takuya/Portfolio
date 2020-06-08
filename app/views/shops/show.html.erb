@@ -1,0 +1,76 @@
+<div class="container" align="center">
+	<table class="all-table">
+		<tr>
+			<td>
+				<div class="icon-mini">
+					<%= attachment_image_tag @shop.user, :profile_image, size:"50x50", fallback: "no_image.jpg", :class => "icon-mini" %>
+				</div>
+			</td>
+			<td>
+				<%= link_to @shop.user.name, user_path(@shop.user.id) %>
+			</td>
+		</tr>
+	</table>
+	</br>
+	<% if @shop.user === current_user %>
+		<%= attachment_image_tag @shop, :shop_image, size:"280x280", fallback: "no_image.jpg" %>
+		<h3><%= @shop.shop_name %></h3>
+		<table class="all-table">
+			<tr>
+				<td><%= render "likes/like", shop: @shop %></td>
+				<td><i class="far fa-comment-alt"></i> <%= @shop.shop_comments.count %></td>
+			</tr>
+		</table></br>
+		<p>Address : <%= @shop.address %></p>
+		<p><%= @shop.caption %></p></br>
+		<%= link_to "Edit", edit_shop_path(@shop.id) %>
+		<%= link_to "Delete", shop_path(@shop.id), method: :delete, "data-confirm" => "本当に消去しますか？" %>
+	<% else %>
+		<p><%= attachment_image_tag @shop, :shop_image, size:"280x280", fallback: "no_image.jpg" %></p>
+		<h3><%= @shop.shop_name %></h3>
+		<table class="all-table">
+			<tr>
+				<td><%= render "likes/like", shop: @shop %></td>
+				<td><i class="far fa-comment-alt"></i> <%= @shop.shop_comments.count %></td>
+			</tr>
+		</table>
+		<p>Address : <%= @shop.address %></p>
+		<p><%= @shop.caption %></p>
+	<% end %>
+
+	<p><%= render "shop_comments/shop_comment", shop: @shop %></p></br>
+
+	<div id="map"></div>
+
+	<script type="text/javascript">
+	    function initMap() {
+
+	        var test ={lat: <%= @shop.latitude %>, lng: <%= @shop.longitude %>};
+	        var map = new google.maps.Map(document.getElementById('map'), {
+	            zoom: 15,
+	            center: test
+	        });
+	        var transitLayer = new google.maps.TransitLayer();
+	        transitLayer.setMap(map);
+
+	        var contentString = '住所：<%= @shop.address %>';
+	        var infowindow = new google.maps.InfoWindow({
+	            content: contentString
+	        });
+
+	        var marker = new google.maps.Marker({
+	            position:test,
+	            map: map,
+	            title: contentString
+	        });
+
+	        marker.addListener('click', function() {
+	            infowindow.open(map, marker);
+	        });
+	    }
+	</script>
+
+	<script async defer
+	    src="https://maps.googleapis.com/maps/api/js?v=quarterly&key=<%= ENV['API_KEY']%>&callback=initMap">
+	</script>
+</div>

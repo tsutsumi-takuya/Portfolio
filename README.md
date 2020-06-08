@@ -1,24 +1,36 @@
-# README
+### 『名称』
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Gather Coffeestand
 
-Things you may want to cover:
+### 『サイト紹介』
 
-* Ruby version
+- 自分の行ったコーヒースタンドやカフェを共有するサイト
 
-* System dependencies
+### 『ターゲット層』
 
-* Configuration
+- コーヒー好きの方ならどなたでも
 
-* Database creation
+### 『作成理由』
 
-* Database initialization
+- 作成者自身がバリスタ経験がありコーヒースタンドによく行く為
+- 他のユーザーが行ったことのあるコーヒースタンドを教えて欲しいと考えた為
+- 地域ごとにマッピングを行いより良いコーヒースタンドサイトを作りたいと思った為
 
-* How to run the test suite
+### 『主な利用シーン』
 
-* Services (job queues, cache servers, search engines, etc.)
+- コーヒースタンドやカフェに行った時
+- 自分が行ったことのないコーヒースタンドに行った時
+- 出先で近くに良いコーヒースタンドがあるか調べたい時
 
-* Deployment instructions
+### 『機能詳細』
 
-* ...
+- レスポンシブWebデザインである
+- ユーザー登録を行い写真付きでお店の紹介が出来る
+- 他のユーザーのFollow、投稿に対しLikeも行える
+- 投稿にコメントを残す事が出来る
+- Mapでお店の場所がわかる
+- 自分が作成した投稿は編集、消去を行える(自分のみ)
+
+### 『機能一覧』
+
+<https://docs.google.com/spreadsheets/d/1XQu8emK0OfJdrEPPU2MgpBzk2dSFbKLEvdqQVABqkJ8/edit#gid=0>
