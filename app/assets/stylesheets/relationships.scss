@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 ul {
-  list-style: none;
+    list-style: none;
 }
 
 .top {
@@ -27,7 +27,7 @@ ul {
     margin-top: 350px;
 }
 
-.grad{
+.grad {
     top: -20px;
     left: -20px;
     right: -40px;
@@ -36,7 +36,7 @@ ul {
     opacity: 0.7;
 }
 
-.login{
+.login {
     top: calc(50% - 75px);
     left: calc(50% - 50px);
     height: 150px;
@@ -57,5 +57,4 @@ ul {
     font-size: 16px;
     font-weight: 400;
     padding: 4px;
-
 }

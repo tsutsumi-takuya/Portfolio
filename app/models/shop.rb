@@ -1,6 +1,7 @@
 class Shop < ApplicationRecord
 
 	belongs_to :user
+	# Userモデルに対してbelongs_toの関連付け
 
 	has_many :shop_comments, dependent: :destroy
 	has_many :likes, dependent: :destroy
@@ -8,6 +9,7 @@ class Shop < ApplicationRecord
 	# class shopが削除された際は上記も削除される(dependent: :destroy)
 
 	attachment :shop_image, destroy: false
+	# shopのimage設定
 
 	geocoded_by :address
   	after_validation :geocode, :if => :address_changed?
@@ -24,4 +26,6 @@ class Shop < ApplicationRecord
 			Shop.all
 		end
 	end
+	# 検索機能でshop_nameを検索対象にする
+
 end
