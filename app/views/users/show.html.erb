@@ -38,7 +38,7 @@
 		<div class="col-md-4">
 			<div class="set">
 				<%= link_to shop_path(shop.id) do %>
-					<%= attachment_image_tag shop, :shop_image, size:"300x300", fallback: "no_image.jpg" %></br>
+					<%= attachment_image_tag shop, :shop_image, size:"300x300", fallback: "asset_path('no_image.jpg')" %></br>
 					<%= link_to shop.shop_name, shop_path(shop.id) %>
 				<% end %>
 			</div>
