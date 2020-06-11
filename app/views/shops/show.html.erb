@@ -35,6 +35,7 @@
 			</tr>
 		</table>
 		<p>Address : <%= @shop.address %></p>
+		<%= link_to "Delete", shop_path(@shop.id), method: :delete, "data-confirm" => "本当に消去しますか？" %>
 		<p><%= @shop.caption %></p>
 	<% end %>
 
