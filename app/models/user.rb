@@ -28,9 +28,9 @@ class User < ApplicationRecord
     likes.where(shop_id: shop_id).exists?
   end
 
-  def active_for_authentication?
-    super && (self.is_active == "Available")
-  end
+  # def active_for_authentication?
+  #   super && (self.is_active == "Available")
+  # end
   # is_activeが有効の場合は有効会員(ログイン可能)
 
   # ユーザーをフォローする
