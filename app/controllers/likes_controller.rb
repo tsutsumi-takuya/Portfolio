@@ -2,6 +2,7 @@ class LikesController < ApplicationController
 
 	before_action :authenticate_user!
 	before_action :shop_params
+	# ログイン済ユーザーのみにアクセスを許可する
 
 	def like
 		like = Like.create(user_id: current_user.id, shop_id: @shop.id)

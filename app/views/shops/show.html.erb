@@ -1,4 +1,5 @@
 <div class="container" align="center">
+
 	<table class="all-table">
 		<tr>
 			<td>
@@ -12,6 +13,7 @@
 		</tr>
 	</table>
 	</br>
+
 	<% if @shop.user === current_user %>
 		<%= attachment_image_tag @shop, :shop_image, size:"280x280", fallback: "no_image.jpg" %>
 		<h3><%= @shop.shop_name %></h3>
@@ -28,12 +30,14 @@
 	<% else %>
 		<p><%= attachment_image_tag @shop, :shop_image, size:"280x280", fallback: "no_image.jpg" %></p>
 		<h3><%= @shop.shop_name %></h3>
+
 		<table class="all-table">
 			<tr>
 				<td><%= render "likes/like", shop: @shop %></td>
 				<td><i class="far fa-comment-alt"></i> <%= @shop.shop_comments.count %></td>
 			</tr>
 		</table>
+
 		<p>Address : <%= @shop.address %></p>
 		<p><%= @shop.caption %></p>
 	<% end %>
@@ -73,4 +77,5 @@
 	<script async defer
 	    src="https://maps.googleapis.com/maps/api/js?v=quarterly&key=<%= ENV['API_KEY']%>&callback=initMap">
 	</script>
+
 </div>

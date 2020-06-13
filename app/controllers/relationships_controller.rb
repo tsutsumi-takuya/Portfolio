@@ -1,6 +1,7 @@
 class RelationshipsController < ApplicationController
 
 	before_action :authenticate_user!
+    # ログイン済ユーザーのみにアクセスを許可する
 
     def follow
         current_user.follow(params[:id])

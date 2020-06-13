@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
 	before_action :authenticate_user!
+	# ログイン済ユーザーのみにアクセスを許可する
 
 	def index
 		@users = User.all
@@ -51,6 +52,7 @@ class UsersController < ApplicationController
 		@user.destroy
 		reset_session
 		redirect_to root_path
+		# ユーザーを退会済みにupdate
 	end
 
 	private

@@ -1,6 +1,7 @@
 class ShopCommentsController < ApplicationController
 
 	before_action :authenticate_user!
+	# ログイン済ユーザーのみにアクセスを許可する
 
 	def create
 		shop = Shop.find(params[:shop_id])
