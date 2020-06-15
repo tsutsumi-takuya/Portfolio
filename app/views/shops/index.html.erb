@@ -19,6 +19,7 @@
 				<div class="img_wrap">
 					<%= link_to shop_path(shop.id) do %>
 						<%= attachment_image_tag shop, :shop_image, size:"300x300", fallback: "no_image.jpg" %>
+						<p><%= shop.shop_name %></p>
 					<% end %>
 				</div>
 			</div>
