@@ -65,22 +65,28 @@
     margin: 0 auto;
     overflow: hidden;
     background: #000;
+  }
+
+.img_wrap p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding:0;
+    color: white;
+    display: none;
 }
 
-.img_wrap img {
-    width: 100%;
-    cursor: pointer;
-    transition-duration: 0.3s;
+.img_wrap:hover p {
+
+  display: block;
+
 }
 
 .img_wrap:hover img {
-    opacity: 0.6;
+    opacity: 0.4;
     transition-duration: 0.3s;
-}
-
-.img_wrap .caption {
-    font-size:    130%;
-    text-align:     center;
-    padding-top:    80px;
-    color:      #fff;
 }
