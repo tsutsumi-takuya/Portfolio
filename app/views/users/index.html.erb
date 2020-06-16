@@ -6,10 +6,12 @@
 				<% if user.is_active == "Available" %>
 					<tr>
 						<td>
-							<%= link_to user_path(user) do %>
-								<%= attachment_image_tag user, :profile_image, size:"100x100", fallback: "no_image.jpg" %>
-								<%= user.name %>
-							<% end %>
+							<div class="icon_idex">
+								<%= link_to user_path(user) do %>
+									<%= attachment_image_tag user, :profile_image, size:"50x50", fallback: "no_image.jpg", :class => "icon_index" %>
+									<%= user.name %>
+								<% end %>
+							</div>
 						</td>
 
 						<td class="followbutton_<%= user.id %>">
