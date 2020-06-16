@@ -15,7 +15,7 @@
 
 	<div class="comment-box">
 		<%= form_for [@shop, @shop_comment] do |f| %>
-			<%= f.text_area :comment, size:"45x5", :placeholder => "Please comment." %>
+			<%= f.text_area :comment, size:"70x5", :placeholder => "Please comment." %>
 			<p><%= f.submit "Done", :class => "button-2" %></p>
 		<% end %>
 	</div>
