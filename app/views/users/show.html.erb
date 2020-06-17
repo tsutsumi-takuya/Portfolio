@@ -20,8 +20,8 @@
 
 	<% if @user === current_user %>
 		<table class="all-table">
-			<th><%= link_to "New shops", new_shop_path %></th>
-			<th><%= link_to "EditProfile", edit_user_path(current_user.id) %></th>
+			<th><%= link_to "New shops", new_shop_path %> /</th>
+			<th><%= link_to "EditProfile", edit_user_path(current_user.id) %> /</th>
 			<th><%= link_to "Withdrawal", goodbye_user_path %></th>
 		</table>
 	<% end %>
